@@ -1,0 +1,8 @@
+@import './variaveis';
+
+body {
+    font-family: $fonte-principal;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    background-color: $cor-cinza;
+}
