@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Planejamento Semanal</title>
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar">
+            <div class="navbar__banner">
+                <h2 class="navbar__banner-titulo">Planejamento Semanal</h2>
+                <p class="navbar__banner-texto">Utilize o formulário para adicionar novas tarefas:</p>
+            </div>
+            <div class="navbar__botoes">
+                <button class="navbar__botoes-salvar">Salvar localStorage</button>
+                <button class="navbar__botoes-excluir">Excluir localStorage</button>
+            </div>
+            <div class="navbar__horario">
+                <input type="text" id="relogio">
+                <input type="text" id="calendario">
+            </div>
+        </nav>
+    </header>
 </body>
 </html>
