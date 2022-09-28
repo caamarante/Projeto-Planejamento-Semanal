@@ -6,28 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Planejamento Semanal</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar__banner">
-                <h2 class="navbar__banner-titulo">Planejamento Semanal</h2>
-                <p class="navbar__banner-texto">Utilize o formulário para adicionar novas tarefas:</p>
-            </div>
-            <div class="navbar__botoes">
-                <button class="navbar__botoes-salvar">Salvar localStorage</button>
-                <button class="navbar__botoes-excluir">Excluir localStorage</button>
-            </div>
-            <div class="navbar__dia_hora">
-                <h1 class="navbar__dia_hora-horario" id="relogio">22:00</h1>
-                <h3 class="navbar__dia_hora-data" id="calendario">14 de Outubro de 2022</h3>
-            </div>
-        </nav>
-    </header>
+    
+    <main>
+        <header>
+            <nav class="navbar">
+                <div class="navbar__banner">
+                    <h2 class="navbar__banner-titulo">Planejamento Semanal</h2>
+                    <p class="navbar__banner-texto">Utilize o formulário para adicionar novas tarefas:</p>
+                </div>
+                <div class="navbar__botoes">
+                    <button class="navbar__botoes-salvar">Salvar localStorage</button>
+                    <button class="navbar__botoes-excluir">Excluir localStorage</button>
+                </div>
+                <div class="navbar__dia_hora">
+                    <h1 class="navbar__dia_hora-horario" id="relogio">22:00</h1>
+                    <h3 class="navbar__dia_hora-data" id="calendario">14 de Outubro de 2022</h3>
+                </div>
+            </nav>
+        </header>
+        <section class="adicionar_atividades">
+            <input type="text" placeholder="Atividade" class="adicionar_atividade__textarea">
+            <select name="" id="" class="adicionar_atividades__dia_semana">
+                <option value="">Segunda-feira</option>
+                <option value="">Terça-feira</option>
+                <option value="">Quarta-feira</option>
+                <option value="">Quinta-feira</option>
+                <option value="">Sexta-feira</option>
+                <option value="">Sábado</option>
+                <option value="">Domingo</option>
+            </select>
+            <select name="" id="" class="adicionar_atividades__horario">
+                <option value="">00:00</option>
+                <option value="">00:30</option>
+                <option value="">01:00</option>
+                <option value="">01:30</option>
+                <option value="">02:00</option>
+                <option value="">02:30</option>
+            </select>
+            <button class="adicionar_atividades__botao-adicionar"><i></i>Adicionar Atividade</button>
+            <button class="adicionar_atividades__botao-excluir"><i></i>Excluir Todos</button>
+        </section>
+    </main>
 </body>
 </html>
