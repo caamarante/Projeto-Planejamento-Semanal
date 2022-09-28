@@ -1,0 +1,12 @@
+@import '../abstract/variaveis';
+
+main {
+    background-color: $cor-branco;
+    border-radius: 2.5rem;
+}
+
+.adicionar_atividades {
+    width: 79rem;
+    margin-left: 2.3125rem;
+    display: flex;
+}

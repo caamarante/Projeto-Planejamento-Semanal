@@ -2,5 +2,88 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.0625rem;
   font-weight: 400;
+  line-height: 1.25rem;
   background-color: #DCDFE3;
+}
+
+.navbar {
+  background-color: #FFFFFF;
+  border-radius: 2.5rem;
+  width: 100vw;
+  display: flex;
+  height: 8.1875rem;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0.25rem 1.5rem rgba(168, 168, 168, 0.25);
+}
+
+.navbar__banner {
+  background-color: #6688FF;
+  width: 36.3125rem;
+  border-radius: 0 0.875rem 0.9375rem 0;
+  padding: 0.6563rem 0 0.6563rem 1.0625rem;
+}
+
+.navbar__banner-titulo {
+  color: #FFFFFF;
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.navbar__banner-texto {
+  color: #FFFFFF;
+  font-size: 0.875rem;
+}
+
+.navbar__botoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  padding-bottom: 0.3125rem;
+}
+
+.navbar__botoes-salvar {
+  border: none;
+  background-color: #2CBE82;
+  color: white;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0.875rem;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+}
+
+.navbar__botoes-excluir {
+  border: none;
+  background-color: #DA2B40;
+  color: white;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0.875rem;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+}
+
+.navbar__dia_hora {
+  text-align: center;
+  padding-right: 2.3125rem;
+}
+
+.navbar__dia_hora-horario {
+  font-size: 2.5rem;
+  padding-bottom: 0.9375rem;
+}
+
+.navbar__dia_hora-data {
+  font-size: 1.25rem;
+}
+
+main {
+  background-color: #FFFFFF;
+  border-radius: 2.5rem;
+}
+
+.adicionar_atividades {
+  width: 79rem;
+  margin-left: 2.3125rem;
+  display: flex;
 }/*# sourceMappingURL=style.css.map */
