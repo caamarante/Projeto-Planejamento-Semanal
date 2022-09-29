@@ -2,11 +2,85 @@
 
 main {
     background-color: $cor-branco;
+    background-image: url('../imagens/background.svg');
+    background-size: cover;
+    background-position: bottom;
     border-radius: 2.5rem;
+    height: 100vh;
 }
 
 .adicionar_atividades {
     width: 79rem;
     margin-left: 2.3125rem;
     display: flex;
+    justify-content: space-between;
+    margin-top: 1.375rem;
+    height: 2.75rem;
+}
+
+.adicionar_atividade__textarea {
+    border: .0625rem solid $cor-verde;
+    border-radius: .625rem;
+    width: 26.5rem;
+    color: $cor-cinza-escuro;
+}
+
+.adicionar_atividade__textarea::placeholder {
+    padding-left: 5.5625rem;
+    font-size: .875rem;
+    color: $cor-cinza-escuro;
+}
+
+.adicionar_atividades__dia_semana {
+    width: 13.125rem;
+    border: .0625rem solid $cor-verde;
+    border-radius: .625rem;
+    padding-left: .75rem;
+    color: $cor-cinza-escuro;
+}
+
+.adicionar_atividades__horario {
+    width: 6.375rem;
+    border: .0625rem solid $cor-verde;
+    border-radius: .625rem;
+    padding-left: .75rem;
+    color: $cor-cinza-escuro;
+}
+
+.adicionar_atividades__botao-adicionar {
+    display: flex;
+    align-items: center;
+    background-color: $cor-verde;
+    border: none;
+    color: $cor-branco;
+    border-radius: .625rem;
+    font-family: $fonte-secundaria;
+    font-size: .875rem;
+    width: 13.875rem;
+    justify-content: center;
+}
+
+.adicionar_atividades__botao-adicionar::before {
+    content: "\002B";
+    font-size: 1.5rem;
+    padding-right: .25rem;
+}
+
+.adicionar_atividades__botao-excluir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $cor-vermelho;
+    border: none;
+    border-radius: .625rem;
+    font-family: $fonte-secundaria;
+    color: $cor-branco;
+    font-size: .875rem;
+    width: 11.5rem;
+}
+
+.adicionar_atividades__botao-excluir::before {
+    content: "\2212";
+    font-size: 1.5rem;
+    padding-right: .25rem;
 }
