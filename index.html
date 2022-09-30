@@ -21,10 +21,8 @@
                     <h2 class="navbar__banner-titulo">Planejamento Semanal</h2>
                     <p class="navbar__banner-texto">Utilize o formulário para adicionar novas tarefas:</p>
                 </div>
-                <div class="navbar__botoes">
-                    <button class="navbar__botoes-salvar">Salvar localStorage</button>
-                    <button class="navbar__botoes-excluir">Excluir localStorage</button>
-                </div>
+                <button class="navbar__botoes-salvar">Salvar localStorage</button>
+                <button class="navbar__botoes-excluir">Excluir localStorage</button>
                 <div class="navbar__dia_hora">
                     <h1 class="navbar__dia_hora-horario" id="relogio">22:00</h1>
                     <h3 class="navbar__dia_hora-data" id="calendario">14 de Outubro de 2022</h3>
@@ -52,6 +50,91 @@
             </select>
             <button class="adicionar_atividades__botao-adicionar">Adicionar Atividade</button>
             <button class="adicionar_atividades__botao-excluir">Excluir Todos</button>
+        </section>
+        <section class="atividades">
+            <div class="atividades__dia_semana">
+                <div class="atividades__dia_semana__horario">
+                    <h3 class="atividades__dia_semana__horario-titulo">Horário</h3>
+                </div>
+                <ul class="atividades__dia_semana-lista">
+                    <li class="atividades__dia_semana-item semana-laranja">Segunda-feira</li>
+                    <li class="atividades__dia_semana-item semana-verde-claro">Terça-feira</li>
+                    <li class="atividades__dia_semana-item semana-azul">Quarta-feira</li>
+                    <li class="atividades__dia_semana-item semana-roxo">Quinta-feira</li>
+                    <li class="atividades__dia_semana-item semana-azul-claro">Sexta-feira</li>
+                    <li class="atividades__dia_semana-item semana-rosa">Sábado</li>
+                    <li class="atividades__dia_semana-item semana-vermelho-claro">Domingo</li>
+                </ul>
+            </div>
+            <div class="cards">
+                <div class="cards__horarios">
+                    <ul class="cards__horarios-lista">
+                        <li class="cards__horarios-item">
+                            <span class="cards__horarios-conflito">
+                                <div class="conflito-elipse"></div>
+                                <div class="conflito-linha"></div>
+                            </span>
+                            10h30m
+                        </li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item">10h30m</li>
+                    </ul>
+                </div>
+                <div class="cards__atividades">
+                    <ul class="cards__atividades__lista">
+                        <li class="cards__atividades-item">
+                            <div class="cards__atividades-item-tag"></div>
+                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
+                        </li>
+                        <li class="cards__atividades-item">
+                            <div class="cards__atividades-item-tag"></div>
+                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
+                        </li>
+                        <li class="cards__atividades-item">
+                            <div class="cards__atividades-item-tag"></div>
+                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
+                        </li>
+                        <li class="cards__atividades-item">
+                            <div class="cards__atividades-item-tag"></div>
+                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
+                        </li>
+                    </ul>
+                    <ul class="cards__atividades__lista">
+                        <li class="cards__atividades-item">
+                            <div class="cards__atividades-item-tag"></div>
+                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
+                        </li>
+                        <li class="cards__atividades-item">
+                            <div class="cards__atividades-item-tag"></div>
+                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
+                        </li>
+                    </ul>
+                    <ul class="cards__atividades__lista">
+                        <li class="cards__atividades-item">
+                            <div class="cards__atividades-item-tag"></div>
+                            <p class="cards__atividades-item-texto">Descanso</p>
+                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </main>
 </body>
