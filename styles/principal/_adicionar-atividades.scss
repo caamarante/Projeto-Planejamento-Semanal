@@ -5,17 +5,15 @@ main {
     background-image: url('../imagens/background.svg');
     background-size: cover;
     background-position: bottom;
-    border-radius: 2.5rem;
     height: 100vh;
 }
 
 .adicionar_atividades {
     width: 79rem;
-    margin-left: 2.3125rem;
     display: flex;
     justify-content: space-between;
-    margin-top: 1.375rem;
     height: 2.75rem;
+    margin: 1.375rem auto 1.375rem 2.3125rem;
 }
 
 .adicionar_atividade__textarea {
@@ -55,7 +53,7 @@ main {
     color: $cor-branco;
     border-radius: .625rem;
     font-family: $fonte-secundaria;
-    font-size: .875rem;
+    font-size: 1.0625rem;
     width: 13.875rem;
     justify-content: center;
 }
@@ -75,7 +73,7 @@ main {
     border-radius: .625rem;
     font-family: $fonte-secundaria;
     color: $cor-branco;
-    font-size: .875rem;
+    font-size: 1.0625rem;
     width: 11.5rem;
 }
 
