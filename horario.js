@@ -17,6 +17,9 @@ function verificaMinutos() {
 }
 
 document.getElementById("calendario").innerHTML = (now.getDate () + " de " + monName [now.getMonth() ] +  " de " + now.getFullYear ());
-setInterval (verificaHoras, 500);
-setInterval (verificaMinutos, 500);
-document.getElementById("relogio").innerHTML =(verificaHoras() + ":" + now.getMinutes());
+
+function chamarHorario() {
+    document.getElementById("relogio").innerHTML =(verificaHoras() + ":" + verificaMinutos());
+}
+
+setInterval (chamarHorario(), 500);
