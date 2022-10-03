@@ -5,7 +5,7 @@ main {
     background-image: url('../imagens/background.svg');
     background-size: cover;
     background-position: bottom;
-    height: 100vh;
+    min-height: 63.75rem;
 }
 
 .adicionar_atividades {
@@ -21,6 +21,8 @@ main {
     border-radius: .625rem;
     width: 26.5rem;
     color: $cor-cinza-escuro;
+    font-size: 1.0625rem;
+    padding-left: .75rem;
 }
 
 .adicionar_atividade__textarea::placeholder {
@@ -37,12 +39,41 @@ main {
     color: $cor-cinza-escuro;
 }
 
-.adicionar_atividades__horario {
-    width: 6.375rem;
-    border: .0625rem solid $cor-verde;
+.select-editable {
+    position:relative;
+    border: .0625rem solid $cor-verde; 
     border-radius: .625rem;
-    padding-left: .75rem;
     color: $cor-cinza-escuro;
+    padding: .0625rem .0625rem .0625rem .75rem;
+    width: 6.375rem;
+    height: 2.5rem;
+}
+.select-editable select {
+    position:absolute; 
+    top:0px; 
+    left:0px; 
+    font-size: .875rem; 
+    border:none; 
+    width: 6.375rem;
+    margin:0;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+.select-editable input {
+    display: flex;
+    align-items: center;
+    position:absolute; 
+    top:0px; 
+    left:0px; 
+    width: 3.75rem;
+    height: 2.375rem;
+    padding: .0625rem .0625rem .0625rem .75rem; 
+    font-size: .875rem; 
+    border:none;
+    border-radius: .625rem;
+}
+.select-editable select:focus, .select-editable input:focus {
+    outline:none;
 }
 
 .adicionar_atividades__botao-adicionar {
@@ -53,7 +84,7 @@ main {
     color: $cor-branco;
     border-radius: .625rem;
     font-family: $fonte-secundaria;
-    font-size: 1.0625rem;
+    font-size: .875rem;
     width: 13.875rem;
     justify-content: center;
 }
