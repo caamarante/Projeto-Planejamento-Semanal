@@ -13,7 +13,6 @@
     <title>Planejamento Semanal</title>
 </head>
 <body>
-    
     <main>
         <header>
             <nav class="navbar">
@@ -21,35 +20,38 @@
                     <h2 class="navbar__banner-titulo">Planejamento Semanal</h2>
                     <p class="navbar__banner-texto">Utilize o formulário para adicionar novas tarefas:</p>
                 </div>
-                <button class="navbar__botoes-salvar">Salvar localStorage</button>
+                <button class="navbar__botoes-salvar" id="salvarLocalStorage">Salvar localStorage</button>
                 <button class="navbar__botoes-excluir">Excluir localStorage</button>
                 <div class="navbar__dia_hora">
-                    <h1 class="navbar__dia_hora-horario" id="relogio">22:00</h1>
-                    <h3 class="navbar__dia_hora-data" id="calendario">14 de Outubro de 2022</h3>
+                    <h1 class="navbar__dia_hora-horario" id="relogio"></h1>
+                    <h3 class="navbar__dia_hora-data" id="calendario"></h3>
                 </div>
             </nav>
         </header>
         <section class="adicionar_atividades">
-            <input type="text" placeholder="Atividade" class="adicionar_atividade__textarea">
-            <select name="" id="" class="adicionar_atividades__dia_semana">
-                <option value="">Segunda-feira</option>
-                <option value="">Terça-feira</option>
-                <option value="">Quarta-feira</option>
-                <option value="">Quinta-feira</option>
-                <option value="">Sexta-feira</option>
-                <option value="">Sábado</option>
-                <option value="">Domingo</option>
+            <input type="text" placeholder="Atividade" required="required" class="adicionar_atividade__textarea" id="texto-atividade">
+            <select name="dia-semana" id="dia-semana" class="adicionar_atividades__dia_semana">
+                <option value="segunda" selected>Segunda-feira</option>
+                <option value="terca">Terça-feira</option>
+                <option value="quarta">Quarta-feira</option>
+                <option value="quinta">Quinta-feira</option>
+                <option value="sexta">Sexta-feira</option>
+                <option value="sabado">Sábado</option>
+                <option value="domingo">Domingo</option>
             </select>
-            <select name="" id="" class="adicionar_atividades__horario">
-                <option value="">00:00</option>
-                <option value="">00:30</option>
-                <option value="">01:00</option>
-                <option value="">01:30</option>
-                <option value="">02:00</option>
-                <option value="">02:30</option>
-            </select>
-            <button class="adicionar_atividades__botao-adicionar">Adicionar Atividade</button>
-            <button class="adicionar_atividades__botao-excluir">Excluir Todos</button>
+            <div class="select-editable">
+                <select onchange="this.nextElementSibling.value = this.value">
+                    <option>00h00m</option>
+                    <option>00h30m</option>
+                    <option>01h00m</option>
+                    <option>01h30m</option>
+                    <option>02h00m</option>
+                    <option>02h30m</option>
+                </select>
+                <input id="select-hora" type="text" name="format" value="00h00m"/>
+            </div>
+            <button class="adicionar_atividades__botao-adicionar" id="adiciocar-atividade">Adicionar Atividade</button>
+            <button class="adicionar_atividades__botao-excluir" id="excluir-dia-atividade">Excluir Todos</button>
         </section>
         <section class="atividades">
             <div class="atividades__dia_semana">
@@ -57,85 +59,49 @@
                     <h3 class="atividades__dia_semana__horario-titulo">Horário</h3>
                 </div>
                 <ul class="atividades__dia_semana-lista">
-                    <li class="atividades__dia_semana-item semana-laranja">Segunda-feira</li>
-                    <li class="atividades__dia_semana-item semana-verde-claro">Terça-feira</li>
-                    <li class="atividades__dia_semana-item semana-azul">Quarta-feira</li>
-                    <li class="atividades__dia_semana-item semana-roxo">Quinta-feira</li>
-                    <li class="atividades__dia_semana-item semana-azul-claro">Sexta-feira</li>
-                    <li class="atividades__dia_semana-item semana-rosa">Sábado</li>
-                    <li class="atividades__dia_semana-item semana-vermelho-claro">Domingo</li>
+                    <li class="atividades__dia_semana-item semana-laranja atividades__dia_semana-item_selecionado" id="dia-segunda">Segunda-feira</li>
+                    <li class="atividades__dia_semana-item semana-verde-claro" id="dia-terca">Terça-feira</li>
+                    <li class="atividades__dia_semana-item semana-azul" id="dia-quarta">Quarta-feira</li>
+                    <li class="atividades__dia_semana-item semana-roxo" id="dia-quinta">Quinta-feira</li>
+                    <li class="atividades__dia_semana-item semana-azul-claro" id="dia-sexta">Sexta-feira</li>
+                    <li class="atividades__dia_semana-item semana-rosa" id="dia-sabado">Sábado</li>
+                    <li class="atividades__dia_semana-item semana-vermelho-claro" id="dia-domingo">Domingo</li>
                 </ul>
             </div>
             <div class="cards">
                 <div class="cards__horarios">
-                    <ul class="cards__horarios-lista">
-                        <li class="cards__horarios-item">
+                    <ul class="cards__horarios-lista" id="cards__horarios-lista">
+                        <!--<li class="cards__horarios-item">
                             <span class="cards__horarios-conflito">
                                 <div class="conflito-elipse"></div>
                                 <div class="conflito-linha"></div>
                             </span>
                             10h30m
                         </li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
-                        <li class="cards__horarios-item">10h30m</li>
+                        <li class="cards__horarios-item"></li>-->
                     </ul>
                 </div>
-                <div class="cards__atividades">
-                    <ul class="cards__atividades__lista">
-                        <li class="cards__atividades-item">
-                            <div class="cards__atividades-item-tag"></div>
-                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
-                        </li>
-                        <li class="cards__atividades-item">
-                            <div class="cards__atividades-item-tag"></div>
-                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
-                        </li>
-                        <li class="cards__atividades-item">
-                            <div class="cards__atividades-item-tag"></div>
-                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
-                        </li>
-                        <li class="cards__atividades-item">
-                            <div class="cards__atividades-item-tag"></div>
-                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
-                        </li>
-                    </ul>
-                    <ul class="cards__atividades__lista">
-                        <li class="cards__atividades-item">
-                            <div class="cards__atividades-item-tag"></div>
-                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
-                        </li>
-                        <li class="cards__atividades-item">
-                            <div class="cards__atividades-item-tag"></div>
-                            <p class="cards__atividades-item-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
-                        </li>
-                    </ul>
-                    <ul class="cards__atividades__lista">
-                        <li class="cards__atividades-item">
-                            <div class="cards__atividades-item-tag"></div>
-                            <p class="cards__atividades-item-texto">Descanso</p>
-                            <buttton class="cards__atividades-item-apagar">Apagar</buttton>
-                        </li>
-                    </ul>
+                <div class="flipped"  id="scroll">
+                    <div class="cards__atividades">
+                        <ul class="cards__atividades__lista" id="cards-lista">
+                            
+                        </ul>
+                        <ul class="cards__atividades__lista">
+                        </ul>
+                        <ul class="cards__atividades__lista">
+                            <li class="cards__atividades-item">
+                                <div class="cards__atividades-item-tag"></div>
+                                <p class="cards__atividades-item-texto">Descanso</p>
+                                <buttton class="cards__atividades-item-apagar">Apagar</buttton>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+    <script src="horario.js"></script>
+    <script src="adicionar-atividades.js"></script>
+    <script src="dia-semana.js"></script>
 </body>
 </html>
