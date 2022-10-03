@@ -8,7 +8,7 @@ body {
 
 .navbar {
   background-color: #FFFFFF;
-  width: 100vw;
+  width: 100%;
   display: flex;
   height: 8.1875rem;
   align-items: center;
@@ -73,7 +73,7 @@ main {
   background-image: url("../imagens/background.svg");
   background-size: cover;
   background-position: bottom;
-  height: 100vh;
+  min-height: 63.75rem;
 }
 
 .adicionar_atividades {
@@ -89,6 +89,8 @@ main {
   border-radius: 0.625rem;
   width: 26.5rem;
   color: #3B3E45;
+  font-size: 1.0625rem;
+  padding-left: 0.75rem;
 }
 
 .adicionar_atividade__textarea::-moz-placeholder {
@@ -117,12 +119,44 @@ main {
   color: #3B3E45;
 }
 
-.adicionar_atividades__horario {
-  width: 6.375rem;
+.select-editable {
+  position: relative;
   border: 0.0625rem solid #2CBE82;
   border-radius: 0.625rem;
-  padding-left: 0.75rem;
   color: #3B3E45;
+  padding: 0.0625rem 0.0625rem 0.0625rem 0.75rem;
+  width: 6.375rem;
+  height: 2.5rem;
+}
+
+.select-editable select {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 0.875rem;
+  border: none;
+  width: 6.375rem;
+  margin: 0;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.select-editable input {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 3.75rem;
+  height: 2.375rem;
+  padding: 0.0625rem 0.0625rem 0.0625rem 0.75rem;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 0.625rem;
+}
+
+.select-editable select:focus, .select-editable input:focus {
+  outline: none;
 }
 
 .adicionar_atividades__botao-adicionar {
@@ -133,7 +167,7 @@ main {
   color: #FFFFFF;
   border-radius: 0.625rem;
   font-family: "Nunito", sans-serif;
-  font-size: 1.0625rem;
+  font-size: 0.875rem;
   width: 13.875rem;
   justify-content: center;
 }
@@ -197,7 +231,7 @@ main {
   justify-content: center;
 }
 
-.atividades__dia_semana-item:hover {
+.atividades__dia_semana-item_selecionado {
   width: 11.875rem;
 }
 
@@ -231,7 +265,8 @@ main {
 
 .cards {
   height: 40.5625rem;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   margin: 0.5625rem 1.5625rem 3.75rem 0;
   display: grid;
   grid-template-columns: 7.3125rem auto;
@@ -252,6 +287,7 @@ main {
 
 .cards__horarios-lista {
   margin-left: 1rem;
+  margin-top: 1rem;
 }
 
 .cards__horarios-item {
@@ -268,6 +304,7 @@ main {
 
 .cards__atividades__lista {
   display: flex;
+  position: relative;
 }
 
 .cards__atividades-item {
@@ -315,10 +352,12 @@ main {
 .cards__horarios-conflito {
   position: absolute;
   display: flex;
-  width: 95vw;
-  left: 0;
+  width: 96vw;
+  left: 0.25rem;
+  top: 1.375rem;
   margin-bottom: 1.25rem;
   align-items: center;
+  z-index: 1;
 }
 
 .conflito-elipse {
@@ -335,20 +374,29 @@ main {
 }
 
 .cards__atividades {
-  overflow-x: scroll;
   display: inline-table;
+  transform: rotate(180deg);
 }
 
-.cards__atividades::-webkit-scrollbar {
-  width: 0.5rem;
-  height: 0.5rem;
+.flipped {
+  overflow-x: scroll;
+  transform: rotate(180deg);
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flipped::-webkit-scrollbar {
   background-color: #FFFFFF;
   box-shadow: 0 0.25rem 1.5rem rgba(168, 168, 168, 0.25);
   border-radius: 1.375rem;
 }
 
-.cards__atividades::-webkit-scrollbar-thumb {
+.flipped::-webkit-scrollbar-thumb {
   background: #DCDFE3;
-  border-radius: 0.5rem;
   border: 0.25rem solid #FFFFFF;
+  border-radius: 1.375rem;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
