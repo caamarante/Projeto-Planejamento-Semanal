@@ -34,7 +34,7 @@
     justify-content: center;
 }
 
-.atividades__dia_semana-item:hover {
+.atividades__dia_semana-item_selecionado {
     width: 11.875rem;
 }
 
@@ -68,7 +68,8 @@
 
 .cards {
     height: 40.5625rem;
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     margin: .5625rem 1.5625rem 3.75rem 0;
     display: grid;
     grid-template-columns: 7.3125rem auto;
@@ -90,6 +91,7 @@
 
 .cards__horarios-lista {
     margin-left: 1rem;
+    margin-top: 1rem;
 }
 
 .cards__horarios-item {
@@ -106,6 +108,7 @@
 
 .cards__atividades__lista {
     display: flex;
+    position: relative;
 }
 
 .cards__atividades-item {
@@ -126,7 +129,7 @@
     height: 5.3125rem;
     background-color: $cor-azul;
     background-size: contain;
-    border-radius: .9375rem 0 0 .9375rem;;
+    border-radius: .9375rem 0 0 .9375rem;
 }
 
 .cards__atividades-item-texto {
@@ -153,10 +156,12 @@
 .cards__horarios-conflito {
     position: absolute;
     display: flex;
-    width: 95vw;
-    left: 0;
+    width: 96vw;
+    left: .25rem;
+    top: 1.375rem;
     margin-bottom: 1.25rem;
     align-items: center;
+    z-index: 1;
 }
 
 .conflito-elipse {
@@ -173,20 +178,31 @@
 }
 
 .cards__atividades {
-    overflow-x: scroll;
     display: inline-table;
+    transform: rotate(180deg);
 }
 
-.cards__atividades::-webkit-scrollbar {
-    width: .5rem;
-    height: .5rem;
+.flipped {
+    overflow-x: scroll;
+    transform: rotate(180deg);
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.flipped::-webkit-scrollbar {
     background-color: $cor-branco;
     box-shadow: 0 .25rem 1.5rem $cor-box-shadow;
     border-radius: 1.375rem;
+    
 }
 
-.cards__atividades::-webkit-scrollbar-thumb {
+.flipped::-webkit-scrollbar-thumb {
     background: $cor-cinza;
-    border-radius: .5rem;
     border: .25rem solid $cor-branco;
+    border-radius: 1.375rem;
+}
+
+::-webkit-scrollbar-corner {
+    display: none;
 }
