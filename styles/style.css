@@ -302,6 +302,18 @@ main {
   position: relative;
 }
 
+.cards__horarios-item-conflito {
+  width: 5.3125rem;
+  height: 5.3125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 102, 102, 0.4);
+  border-radius: 0.625rem;
+  margin-bottom: 0.5625rem;
+  position: relative;
+}
+
 .cards__atividades__lista {
   display: flex;
   position: relative;
@@ -324,6 +336,14 @@ main {
   min-width: 0.875rem;
   height: 5.3125rem;
   background-color: #6688FF;
+  background-size: contain;
+  border-radius: 0.9375rem 0 0 0.9375rem;
+}
+
+.cards__atividades-item-tag-conflito {
+  min-width: 0.875rem;
+  height: 5.3125rem;
+  background-color: #FF6666;
   background-size: contain;
   border-radius: 0.9375rem 0 0 0.9375rem;
 }
@@ -379,6 +399,7 @@ main {
 }
 
 .flipped {
+  width: 88vw;
   overflow-x: scroll;
   transform: rotate(180deg);
   display: flex;
