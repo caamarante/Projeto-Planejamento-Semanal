@@ -100,10 +100,37 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $cor-opacidade-azul;
     border-radius: .625rem;
     margin-bottom: .5625rem;
     position: relative;
+}
+
+.cards__horarios-item-segunda {
+    background-color: $cor-opacidade-laranja;
+}
+
+.cards__horarios-item-terca {
+    background-color: $cor-opacidade-verde-claro;
+}
+
+.cards__horarios-item-quarta {
+    background-color: $cor-opacidade-azul;
+}
+
+.cards__horarios-item-quinta {
+    background-color: $cor-opacidade-roxo;
+}
+
+.cards__horarios-item-sexta {
+    background-color: $cor-opacidade-azul-claro;
+}
+
+.cards__horarios-item-sabado {
+    background-color: $cor-opacidade-rosa;
+}
+
+.cards__horarios-item-domingo {
+    background-color: $cor-opacidade-vermelho-claro;
 }
 
 .cards__horarios-item-conflito {
@@ -139,10 +166,38 @@
 .cards__atividades-item-tag {
     min-width: .875rem;
     height: 5.3125rem;
-    background-color: $cor-azul;
     background-size: contain;
     border-radius: .9375rem 0 0 .9375rem;
 }
+
+.cards__atividades-item-tag-segunda {
+    background-color: $cor-laranja;
+}
+
+.cards__atividades-item-tag-terca {
+    background-color: $cor-verde-claro;
+}
+
+.cards__atividades-item-tag-quarta {
+    background-color: $cor-azul;
+}
+
+.cards__atividades-item-tag-quinta {
+    background-color: $cor-roxo;
+}
+
+.cards__atividades-item-tag-sexta {
+    background-color: $cor-azul-claro;
+}
+
+.cards__atividades-item-tag-sabado {
+    background-color: $cor-rosa;
+}
+
+.cards__atividades-item-tag-domingo {
+    background-color: $cor-vermelho-claro;
+}
+
 
 .cards__atividades-item-tag-conflito {
     min-width: .875rem;
