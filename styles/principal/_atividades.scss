@@ -106,6 +106,18 @@
     position: relative;
 }
 
+.cards__horarios-item-conflito {
+    width: 5.3125rem;
+    height: 5.3125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $cor-opacidade-vermelho-claro;
+    border-radius: .625rem;
+    margin-bottom: .5625rem;
+    position: relative;
+}
+
 .cards__atividades__lista {
     display: flex;
     position: relative;
@@ -128,6 +140,14 @@
     min-width: .875rem;
     height: 5.3125rem;
     background-color: $cor-azul;
+    background-size: contain;
+    border-radius: .9375rem 0 0 .9375rem;
+}
+
+.cards__atividades-item-tag-conflito {
+    min-width: .875rem;
+    height: 5.3125rem;
+    background-color: $cor-vermelho-claro;
     background-size: contain;
     border-radius: .9375rem 0 0 .9375rem;
 }
@@ -183,6 +203,7 @@
 }
 
 .flipped {
+    width: 88vw;
     overflow-x: scroll;
     transform: rotate(180deg);
     display: flex;
