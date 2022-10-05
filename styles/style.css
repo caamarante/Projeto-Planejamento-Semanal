@@ -231,7 +231,7 @@ main {
   justify-content: center;
 }
 
-.atividades__dia_semana-item_selecionado {
+.atividades__dia_semana-item_selecionado, .atividades__dia_semana-item:hover {
   width: 11.875rem;
 }
 
