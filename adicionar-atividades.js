@@ -1,6 +1,7 @@
 var objDiv = document.getElementById("scroll");
 objDiv.scrollLeft = objDiv.scrollWidth;
 
+
 var arrayAtividades = [];
 var guardarAtividadeHoraSegunda = [[],[]];
 var guardarAtividadeHoraTerca = [[],[]];
@@ -45,6 +46,143 @@ var maisDeUmHorario = 0;
 
 var botaoApagar = document.querySelector(".cards__atividades-item-apagar")
 
+var matrizSegundaRecebida = JSON.parse(localStorage.getItem("arraySegunda"));
+var matrizTercaRecebida = JSON.parse(localStorage.getItem("arrayTerca"));
+var matrizQuartaRecebida = JSON.parse(localStorage.getItem("arrayQuarta"));
+var matrizQuintaRecebida = JSON.parse(localStorage.getItem("arrayQuinta"));
+var matrizSextaRecebida = JSON.parse(localStorage.getItem("arraySexta"));
+var matrizSabadoRecebida = JSON.parse(localStorage.getItem("arraySabado"));
+var matrizDomingoRecebida = JSON.parse(localStorage.getItem("arrayDomingo"));
+var matrizHoraSegundaRecebida = JSON.parse(localStorage.getItem("horaSegunda"));
+var matrizHoraTercaRecebida = JSON.parse(localStorage.getItem("horaTerca"));
+var matrizHoraQuartaRecebida = JSON.parse(localStorage.getItem("horaQuarta"));
+var matrizHoraQuintaRecebida = JSON.parse(localStorage.getItem("horaQuinta"));
+var matrizHoraSextaRecebida = JSON.parse(localStorage.getItem("horaSexta"));
+var matrizHoraSabadoRecebida = JSON.parse(localStorage.getItem("horaSabado"));
+var matrizHoraDomingoRecebida = JSON.parse(localStorage.getItem("horaDomingo"));
+
+if (matrizSegundaRecebida != null) {
+    guardarAtividadeHoraSegunda = matrizSegundaRecebida;
+    guardarHoraSegunda = matrizHoraSegundaRecebida;
+}
+
+if (matrizTercaRecebida != null) {
+    guardarAtividadeHoraTerca = matrizTercaRecebida;
+    guardarHoraTerca = matrizHoraTercaRecebida;
+}
+
+if (matrizQuartaRecebida != null) {
+    guardarAtividadeHoraQuarta = matrizQuartaRecebida;
+    guardarHoraQuarta = matrizHoraQuartaRecebida;
+}
+if (matrizQuintaRecebida != null) {
+    guardarAtividadeHoraQuinta = matrizQuintaRecebida;
+    guardarHoraQuinta = matrizHoraQuintaRecebida;
+}
+if (matrizSextaRecebida != null) {
+    guardarAtividadeHoraSexta = matrizSextaRecebida;
+    guardarHoraSexta = matrizHoraSextaRecebida;
+}
+if (matrizSabadoRecebida != null) {
+    guardarAtividadeHoraSabado = matrizSabadoRecebida;
+    guardarHoraSabado = matrizHoraSabadoRecebida;
+}
+if (matrizDomingoRecebida != null) {
+    guardarAtividadeHoraDomingo = matrizDomingoRecebida;
+    guardarHoraDomingo = matrizHoraDomingoRecebida;
+}
+
+function pegarBotao() {
+    document.querySelectorAll(".cards__atividades-item-apagar").forEach( function(button) {
+        button.addEventListener("click", function(event) {
+        const el = event.target || event.srcElement;
+        const id = el.getAttribute("id");
+        
+        for (i=0; i < guardarAtividadeHoraSegunda[0].length; i++) {
+            
+            if (id == 'guardarAtividadeHoraSegunda[0]['+i+']') {
+                guardarAtividadeHoraSegunda[0].splice(i,1);
+                //var indicehoraguardada = guardarHoraSegunda.indexOf(guardarAtividadeHoraSegunda[1][i]);
+                guardarAtividadeHoraSegunda[1].splice(i,1);
+                console.log(id);
+                console.log(guardarAtividadeHoraSegunda);
+                /*var achou = 0;
+                for (j=0;j<guardarAtividadeHoraSegunda[1].length; j++){
+                    if (guardarHoraSegunda[indicehoraguardada] == guardarAtividadeHoraSegunda[1][j]) {
+                        achou = 1;
+                    }
+                }
+                if (achou != 1) {
+                    guardarHoraSegunda.splice(indicehoraguardada,1);
+                }*/
+            }
+        }
+        for (i=0; i < guardarAtividadeHoraTerca[0].length; i++) {
+            
+            if (id == 'guardarAtividadeHoraTerca[0]['+i+']') {
+                guardarAtividadeHoraTerca[0].splice(i,1);
+
+                guardarAtividadeHoraTerca[1].splice(i,1);
+                console.log(id);
+                console.log(guardarAtividadeHoraTerca);
+            }
+        }
+        for (i=0; i < guardarAtividadeHoraQuarta[0].length; i++) {
+            
+            if (id == 'guardarAtividadeHoraQuarta[0]['+i+']') {
+                guardarAtividadeHoraQuarta[0].splice(i,1);
+
+                guardarAtividadeHoraQuarta[1].splice(i,1);
+                console.log(id);
+                console.log(guardarAtividadeHoraQuarta);
+            }
+        }
+        for (i=0; i < guardarAtividadeHoraQuinta[0].length; i++) {
+            
+            if (id == 'guardarAtividadeHoraQuinta[0]['+i+']') {
+                guardarAtividadeHoraQuinta[0].splice(i,1);
+
+                guardarAtividadeHoraQuinta[1].splice(i,1);
+                console.log(id);
+                console.log(guardarAtividadeHoraQuinta);
+            }
+        }
+        for (i=0; i < guardarAtividadeHoraSexta[0].length; i++) {
+            
+            if (id == 'guardarAtividadeHoraSexta[0]['+i+']') {
+                guardarAtividadeHoraSexta[0].splice(i,1);
+
+                guardarAtividadeHoraSexta[1].splice(i,1);
+                console.log(id);
+                console.log(guardarAtividadeHoraSexta);
+            }
+        }
+        for (i=0; i < guardarAtividadeHoraSabado[0].length; i++) {
+            
+            if (id == 'guardarAtividadeHoraSabado[0]['+i+']') {
+                guardarAtividadeHoraSabado[0].splice(i,1);
+
+                guardarAtividadeHoraSabado[1].splice(i,1);
+                console.log(id);
+                console.log(guardarAtividadeHoraSabado);
+            }
+        }
+        for (i=0; i < guardarAtividadeHoraDomingo[0].length; i++) {
+            
+            if (id == 'guardarAtividadeHoraDomingo[0]['+i+']') {
+                guardarAtividadeHoraDomingo[0].splice(i,1);
+
+                guardarAtividadeHoraDomingo[1].splice(i,1);
+                console.log(id);
+                console.log(guardarAtividadeHoraDomingo);
+            }
+        }
+        
+        el.parentNode.remove();
+        });
+    });
+}
+
 function segunda() {
     document.getElementById("cards__horarios-lista-segunda").innerHTML = '';
     document.getElementById("cards__horarios-lista-terca").innerHTML = '';
@@ -55,17 +193,25 @@ function segunda() {
     document.getElementById("cards__horarios-lista-domingo").innerHTML = '';
     document.getElementById("cards__atividades").innerHTML = '';
     for (i=0; i < guardarHoraSegunda.length; i++) {
-        document.getElementById("cards__horarios-lista-segunda").insertAdjacentHTML("beforeend", '<li class="cards__horarios-item cards__horarios-item-segunda">' + guardarHoraSegunda[i] + '</li>');
-        document.getElementById("cards__atividades").insertAdjacentHTML("beforeend", '<ul class="cards__atividades__lista" id="' + guardarHoraSegunda[i] + '"></ul>');
+        //var maisDeUmaAtividade = 0;
+            document.getElementById("cards__horarios-lista-segunda").insertAdjacentHTML("beforeend", '<li class="cards__horarios-item cards__horarios-item-segunda">' + guardarHoraSegunda[i] + '</li>');
+            document.getElementById("cards__atividades").insertAdjacentHTML("beforeend", '<ul class="cards__atividades__lista" id="' + guardarHoraSegunda[i] + '"></ul>');
+        
         for (j=0; j < guardarAtividadeHoraSegunda[0].length; j++) {
             if (guardarHoraSegunda[i] == guardarAtividadeHoraSegunda[1][j]){
+                //maisDeUmaAtividade++;
                 document.getElementById(guardarHoraSegunda[i]).insertAdjacentHTML("beforeend",'<li class="cards__atividades-item"><div class="cards__atividades-item-tag cards__atividades-item-tag-segunda"></div><p class="cards__atividades-item-texto">' + guardarAtividadeHoraSegunda[0][j] + '</p><button class="cards__atividades-item-apagar" id="guardarAtividadeHoraSegunda[0]['+j+']">Apagar</button></li>');
             }
         }
+        /*if (maisDeUmaAtividade > 1) {
+            document.getElementById("cards__horarios-lista-segunda").innerHTML = '<li class="cards__horarios-item cards__horarios-item-conflito"><span class="cards__horarios-conflito"><div class="conflito-elipse"></div><div class="conflito-linha"></div></span>' + guardarHoraSegunda[i] + '</li>';
+        }*/
     }
+    pegarBotao();
 }
 
 function terca() {
+    
     document.getElementById("cards__horarios-lista-segunda").innerHTML = '';
     document.getElementById("cards__horarios-lista-terca").innerHTML = '';
     document.getElementById("cards__horarios-lista-quarta").innerHTML = '';
@@ -83,9 +229,11 @@ function terca() {
             }
         }
     }
+    pegarBotao();
 }
 
 function quarta() {
+    
     document.getElementById("cards__horarios-lista-segunda").innerHTML = '';
     document.getElementById("cards__horarios-lista-terca").innerHTML = '';
     document.getElementById("cards__horarios-lista-quarta").innerHTML = '';
@@ -103,9 +251,11 @@ function quarta() {
             }
         }
     }
+    pegarBotao();
 }
 
 function quinta() {
+    
     document.getElementById("cards__horarios-lista-segunda").innerHTML = '';
     document.getElementById("cards__horarios-lista-terca").innerHTML = '';
     document.getElementById("cards__horarios-lista-quarta").innerHTML = '';
@@ -123,9 +273,11 @@ function quinta() {
             }
         }
     }
+    pegarBotao();
 }
 
 function sexta() {
+    
     document.getElementById("cards__horarios-lista-segunda").innerHTML = '';
     document.getElementById("cards__horarios-lista-terca").innerHTML = '';
     document.getElementById("cards__horarios-lista-quarta").innerHTML = '';
@@ -143,9 +295,11 @@ function sexta() {
             }
         }
     }    
+    pegarBotao();
 }
 
 function sabado() {
+    
     document.getElementById("cards__horarios-lista-segunda").innerHTML = '';
     document.getElementById("cards__horarios-lista-terca").innerHTML = '';
     document.getElementById("cards__horarios-lista-quarta").innerHTML = '';
@@ -163,9 +317,11 @@ function sabado() {
             }
         }
     }    
+    pegarBotao();
 }
 
 function domingo() {
+    
     document.getElementById("cards__horarios-lista-segunda").innerHTML = '';
     document.getElementById("cards__horarios-lista-terca").innerHTML = '';
     document.getElementById("cards__horarios-lista-quarta").innerHTML = '';
@@ -183,6 +339,7 @@ function domingo() {
             }
         }
     }
+    pegarBotao();
 }
 
 
@@ -429,6 +586,7 @@ botao_atividade.onclick = function adicionarAtividade() {
 
     dia_segunda.onclick = function aumentarWidth() {
         
+        
         if(dia_segunda.className == "atividades__dia_semana-item semana-laranja") {
             dia_segunda.className = "atividades__dia_semana-item semana-laranja atividades__dia_semana-item_selecionado";
             dia_terca.className = "atividades__dia_semana-item semana-verde-claro";
@@ -444,6 +602,7 @@ botao_atividade.onclick = function adicionarAtividade() {
     }
     
     dia_terca.onclick = function mostrarAtividadeTerca() {
+        
         if(dia_terca.className == "atividades__dia_semana-item semana-verde-claro") {
             dia_segunda.className = "atividades__dia_semana-item semana-laranja";
             dia_terca.className = "atividades__dia_semana-item semana-verde-claro atividades__dia_semana-item_selecionado";
@@ -458,6 +617,7 @@ botao_atividade.onclick = function adicionarAtividade() {
     }
 
     dia_quarta.onclick = function aumentarWidth() {
+        
         if(dia_quarta.className == "atividades__dia_semana-item semana-azul") {
             dia_segunda.className = "atividades__dia_semana-item semana-laranja";
             dia_terca.className = "atividades__dia_semana-item semana-verde-claro";
@@ -531,7 +691,7 @@ botao_atividade.onclick = function adicionarAtividade() {
     //---------------------------------------------------------
 
 
-
+    pegarBotao();
 
    
         
@@ -539,14 +699,7 @@ botao_atividade.onclick = function adicionarAtividade() {
         
 }
 
-/*document.querySelectorAll(".cards__atividades-item-apagar").forEach( function(button) {
-    button.addEventListener("click", function(event) {
-    const el = event.target || event.srcElement;
-    const id = el.getAttribute("id");
-    console.log(id)
-    });
-
-});*/
+/**/
 
 botao_excluir_dia.onclick = function apagarAtividadedia() {
 
@@ -624,7 +777,7 @@ botao_excluir_dia.onclick = function apagarAtividadedia() {
         guardarAtividadeHoraDomingo[1].length=0;
         arrayAtividades.length = 0;
         guardarHoraDomingo.length = 0;
-        document.getElementById("cards__horarios-lista-terca").innerHTML = '';
+        document.getElementById("cards__horarios-lista-domingo").innerHTML = '';
     }
     
 }
